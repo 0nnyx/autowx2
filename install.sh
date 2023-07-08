@@ -135,7 +135,7 @@ kal -h
 
 echo
 echo
-echo "******** Install Meteor demod and decode"
+echo "******** Install Meteor demod decode and rectify"
 echo
 echo
 cd $baseDir/bin/sources/
@@ -154,6 +154,11 @@ cmake ..
 make
 sudo make install
 
+cd $baseDir/bin/sources/
+wget https://www.qsl.net/5/5b4az/pkg/lrpt/rectify-jpg-0.3.tar.bz2
+tar xjf rectify-jpg-0.3.tar.bz2
+cd rectify-jpg-0.3
+gcc rectify-jpg.c -lm -ljpeg -o $baseDir/rectify-jpg
 
 echo
 echo
