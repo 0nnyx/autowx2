@@ -135,13 +135,34 @@ kal -h
 
 echo
 echo
+echo "******** Install Meteor demod and decode"
+echo
+echo
+cd $baseDir/bin/sources/
+git clone https://github.com/dbdexter-dev/meteor_demod.git
+cd meteor_demod
+mkdir build && cd build
+cmake ..
+make
+sudo make install
+
+cd $baseDir/bin/sources/
+git clone https://github.com/dbdexter-dev/meteor_decode.git
+cd meteor_decode
+mkdir build && cd build
+cmake ..
+make
+sudo make install
+
+
+echo
+echo
 echo "******** Getting auxiliary programs"
 echo
 echo
 
 cd $baseDir/bin/
 wget https://raw.githubusercontent.com/filipsPL/heatmap/master/heatmap.py -O $baseDir/bin/heatmap.py
-
 
 
 echo
@@ -153,11 +174,10 @@ echo
 cd $baseDir
 bin/update-keps.sh
 
-
-
 echo "***************** default dongle shift...."
 
 echo -n "0" > var/dongleshift.txt
+
 
 echo
 echo "-------------------------------------------------------------------------"
