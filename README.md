@@ -1,6 +1,10 @@
 autowx2
 ==============
 
+> [!CAUTION]
+> Please be advised that NOAA-15 and NOAA-19 have been decommissioned. NOAA-15 was decommissioned on August 19, 2025 at 20:37 UTC and NOAA-19 was decommissioned on August 13, 2025 at 16:55 UTC. For additional details, please [click here](https://www.ospo.noaa.gov/operations/poes/status.html). So, in summary, now all NOAA-11, -12, -14, -15, -16, -17, -18, -19 are decommissioned. 
+
+
 **autowx2** is a set of programs and scripts for schedule satellite and ground recordings with SDR dongle. Bundled plugins include scripts for processing weather APT images from NOAA or METEOR satellites, ISS voice communication recordings and some others.
 
 ![image](docs/NOAA19-HVCT.jpg) ![image](docs/NOAA19-therm.jpg)
@@ -26,7 +30,6 @@ autowx2
       - [/modules/meteor-m2](#modulesmeteor-m2)
     - [var directory](#var-directory)
 - [Static web pages](#static-web-pages)
-- [Webserver](#webserver)
 - [Working instances of autowx2](#working-instances-of-autowx2)
 - [Issues? Comments? Suggestions?](#issues-comments-suggestions)
 
@@ -44,7 +47,7 @@ This is a rewritten and fine-tuned version of tools for the automatic weather sa
 
 <!--- [![ghit.me](https://ghit.me/badge.svg?repo=filipsPL/autowx2)](https://ghit.me/repo/filipsPL/autowx2) -->
 
-[![badge-travis](https://api.travis-ci.org/filipsPL/autowx2.svg?branch=master)](https://travis-ci.org/filipsPL/autowx2) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FfilipsPL%2Fautowx2.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FfilipsPL%2Fautowx2?ref=badge_shield)  [![Updates](https://pyup.io/repos/github/filipsPL/autowx2/shield.svg)](https://pyup.io/repos/github/filipsPL/autowx2/) [![release version](https://img.shields.io/github/release/filipsPL/autowx2.svg)](https://github.com/filipsPL/autowx2/releases)
+[![Updates](https://pyup.io/repos/github/filipsPL/autowx2/shield.svg)](https://pyup.io/repos/github/filipsPL/autowx2/) [![release version](https://img.shields.io/github/release/filipsPL/autowx2.svg)](https://github.com/filipsPL/autowx2/releases)
 
 **autowx2** was tested and successfully applied to schedule recordings of:
 - [x] NOAA weather satellites
@@ -268,9 +271,6 @@ Variable data.
 dongleshift.txt     - current dongle shift
 nextpass.*          - list and plot of the next passes
 tle/                - directory with tle data
-flask/              - flask webserver stuff (see flask documentation):
-   static/          - css, js
-   templates/       - html template(s)
 www/                - stuff for static webpages; templates and output data
    css/             - css, js
 ```
@@ -282,14 +282,6 @@ Modules may generate static webpages - snippets (see: noaa `noaa_gallery.sh` scr
 ![static web page](docs/www-static+shadow.jpg)
 
 The web page is generated into `/var/www/` (the default location).
-
-# Webserver
-
-autowx2 is equipped with a simple flask webserver showing what is going on - displaying current logs (with some limitations, i.e., not showing logs of external programs - solution needed) and updated pass list.
-
-![static web page](docs/www-dynamic+shadow.jpg)
-
-The default address is `http://localhost:5010/` (the port may be changed in the config file via `webInterfacePort` variable)
 
 # Working instances of autowx2
 
