@@ -1,6 +1,8 @@
 autowx2
 ==============
 
+# I'm not maintaining this project anymore as all NOAA are out of operation. You should also move on from this project and use Satdump to get better results for METEOR, INMARSAT and other fancy satellites.
+
 > [!CAUTION]
 > Please be advised that NOAA-15 and NOAA-19 have been decommissioned. NOAA-15 was decommissioned on August 19, 2025 at 20:37 UTC and NOAA-19 was decommissioned on August 13, 2025 at 16:55 UTC. For additional details, please [click here](https://www.ospo.noaa.gov/operations/poes/status.html). So, in summary, now all NOAA-11, -12, -14, -15, -16, -17, -18, -19 are decommissioned. 
 
